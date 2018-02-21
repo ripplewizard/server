@@ -1318,7 +1318,7 @@ static my_bool allocate_head(MARIA_FILE_BITMAP *bitmap, uint size,
         if (first_found)
         {
           first_found= 0;
-          bitmap->full_head_size= (data - bitmap->map);
+          bitmap->full_head_size= (uint)(data - bitmap->map);
         }
       }
       if (pattern <= min_bits)
@@ -1437,7 +1437,7 @@ static my_bool allocate_tail(MARIA_FILE_BITMAP *bitmap, uint size,
         if (first_found)
         {
           first_found= 0;
-          bitmap->full_tail_size= (data - bitmap->map);
+          bitmap->full_tail_size= (uint)(data - bitmap->map);
         }
       }
 
